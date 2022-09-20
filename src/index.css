@@ -16,3 +16,13 @@ code {
   color: limegreen;
   font-weight: bold;
 }
+
+.card {
+  width: 400px;
+}
+
+.employees-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

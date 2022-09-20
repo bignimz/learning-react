@@ -1,6 +1,7 @@
 function Employee(props) {
   return (
     <>
+      <img className="img-fluid rounded-start" src={props.img} />
       <p>
         {props.firstName} {props.lastName}
       </p>

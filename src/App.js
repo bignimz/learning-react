@@ -4,9 +4,57 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const [employees, setEmployees] = useState([
+    {
+      img: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg",
+      firstName: "John",
+      lastName: "Doe",
+      role: "Manager",
+      department: "IT",
+    },
+    {
+      img: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg",
+      firstName: "Nmrod",
+      lastName: "Allan",
+      role: "Senior Dev",
+      department: "IT",
+    },
+    {
+      img: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
+      firstName: "Mike",
+      lastName: "Moja",
+      role: "",
+      department: "",
+    },
+    {
+      img: "https://images.pexels.com/photos/4662950/pexels-photo-4662950.jpeg",
+      firstName: "Mary",
+      lastName: "Poper",
+      role: "HR Manager",
+      department: "Admin",
+    },
+    {
+      img: "https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg",
+      firstName: "Jane",
+      lastName: "Doe",
+      role: "Receptionist",
+      department: "Admin",
+    },
+    {
+      img: "https://images.pexels.com/photos/2232981/pexels-photo-2232981.jpeg",
+      firstName: "Philip",
+      lastName: "Salazar",
+      role: "CTO",
+      department: "IT",
+    },
+  ]);
+
   const [role, setRole] = useState("Intern");
+
   const showEmployees = true;
+
   const logo = <p className="logo">Employee Manager</p>;
+
   return (
     <div className="App">
       <header className="App-header mb-5">
@@ -35,65 +83,35 @@ function App() {
           <p>No Employees Available!</p>
         )}
 
-        <div class="my-5">
-          <table class="table table-hover table-striped">
-            <thead>
-              <tr class="table-dark">
-                <th scope="col">#</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Position</th>
-                <th scope="col">Department</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>
-                  <Employee firstName="John" />
-                </td>
-                <td>
-                  <Employee firstName="Doe" />
-                </td>
-                <td>
-                  <Employee role={role} />
-                </td>
-                <td>
-                  <Employee department="IT Department" />
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>
-                  <Employee firstName="Nimrod" />
-                </td>
-                <td>
-                  <Employee lastName="Allan" />
-                </td>
-                <td>
-                  <Employee role="Full Stack Developer" />
-                </td>
-                <td>
-                  <Employee department="IT Department" />
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>
-                  <Employee firstName="Andrew" />
-                </td>
-                <td>
-                  <Employee lastName="Odhees" />
-                </td>
-                <td>
-                  <Employee role="" />
-                </td>
-                <td>
-                  <Employee department="" />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="my-5 employees-wrapper ">
+          {employees.map((employee) => {
+            return (
+              <div className="card shadow-lg mb-3">
+                <div className="row g-0">
+                  <div className="col-md-4" styleName="max-width: 540px">
+                    <Employee img={employee.img} />
+                  </div>
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        <Employee firstName={employee.firstName} />{" "}
+                        <Employee lastName={employee.lastName} />
+                      </h5>
+                      <p className="card-text">
+                        <Employee role={employee.role} />
+                      </p>
+                      <p className="card-text">
+                        <small className="text-muted">
+                          <Employee department={employee.department} />
+                        </small>
+                      </p>
+                      <buton className="btn btn-success px-5">Edit</buton>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
