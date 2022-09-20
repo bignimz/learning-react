@@ -1,10 +1,19 @@
 function Employee(props) {
   return (
     <>
-      <h2>{props.name}</h2>
-      <h3>
+      <p>
+        {props.firstName} {props.lastName}
+      </p>
+      <p>
         {props.role !== "" ? props.role : <p className="norole"> No Role!</p>}
-      </h3>
+      </p>
+      <p>
+        {props.department !== "" ? (
+          props.department
+        ) : (
+          <p className="nodepartment">General Staff, No Department</p>
+        )}
+      </p>
     </>
   );
 }
