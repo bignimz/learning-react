@@ -87,7 +87,6 @@ function App() {
 
         <div className="my-5 employees-wrapper ">
           {employees.map((employee) => {
-            console.log(uuidv4());
             return (
               <div className="card shadow-lg mb-3">
                 <div className="row g-0">
