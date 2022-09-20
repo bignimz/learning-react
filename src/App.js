@@ -1,7 +1,9 @@
 import "./App.css";
 import Employee from "./components/employee";
+import { useState } from "react";
 
 function App() {
+  const [role, setRole] = useState("Intern");
   const showEmployees = true;
   const logo = <p className="logo">Employee Manager</p>;
   return (
@@ -20,7 +22,14 @@ function App() {
       <div className="container">
         {showEmployees ? (
           <>
-            <Employee name="John Doe" role="Senior Dev" />
+            <input
+              type="text"
+              onChange={(e) => {
+                console.log(e.target.value);
+                setRole(e.target.value);
+              }}
+            />
+            <Employee name="John Doe" role={role} />
             <Employee name="Nimrod Allan" role="Full stack Engineer" />
             <Employee name="Andrew Odhees" role="" />
           </>
