@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Employee from "./components/employee";
 
@@ -8,8 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {logo}
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <>{logo}</>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -22,9 +20,9 @@ function App() {
       <div className="container">
         {showEmployees ? (
           <>
-            <Employee name="John" role="Senior Dev" />
-            <Employee />
-            <Employee />
+            <Employee name="John Doe" role="Senior Dev" />
+            <Employee name="Nimrod Allan" role="Full stack Engineer" />
+            <Employee name="Andrew Odhees" role="" />
           </>
         ) : (
           <p>No Employees Available!</p>
