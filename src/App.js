@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [employees, setEmployees] = useState([
     {
-      img: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg",
+      img: "https://images.pexels.com/photos/1844547/pexels-photo-1844547.jpeg",
       firstName: "John",
       lastName: "Doe",
       role: "Manager",
@@ -20,7 +20,7 @@ function App() {
       department: "IT",
     },
     {
-      img: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
+      img: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg",
       firstName: "Mike",
       lastName: "Moja",
       role: "",
@@ -34,7 +34,7 @@ function App() {
       department: "Admin",
     },
     {
-      img: "https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg",
+      img: "https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg",
       firstName: "Jane",
       lastName: "Doe",
       role: "Receptionist",
@@ -100,12 +100,12 @@ function App() {
                       <p className="card-text">
                         <Employee role={employee.role} />
                       </p>
-                      <p className="card-text">
+                      <div className="card-text">
                         <small className="text-muted">
                           <Employee department={employee.department} />
                         </small>
-                      </p>
-                      <buton className="btn btn-success px-5">Edit</buton>
+                      </div>
+                      <buton className="btn btn-success px-5">Update</buton>
                     </div>
                   </div>
                 </div>

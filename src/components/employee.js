@@ -1,20 +1,12 @@
 function Employee(props) {
   return (
     <>
-      <img className="img-fluid rounded-start" src={props.img} />
-      <p>
-        {props.firstName} {props.lastName}
-      </p>
-      <p>
-        {props.role !== "" ? props.role : <p className="norole"> No Role!</p>}
-      </p>
-      <p>
-        {props.department !== "" ? (
-          props.department
-        ) : (
-          <p className="nodepartment">General Staff, No Department</p>
-        )}
-      </p>
+      <img className="img-fluid" src={props.img} />
+      {props.firstName} {props.lastName}
+      {props.role !== "" ? props.role : "No Role!"}
+      {props.department !== ""
+        ? props.department
+        : "General Staff, No Department"}
     </>
   );
 }
