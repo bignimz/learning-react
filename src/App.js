@@ -2,6 +2,8 @@ import "./App.css";
 import Employee from "./components/employee";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { v4 as uuidv4 } from "uuid";
+import EditEmployee from "./components/editemployee";
 
 function App() {
   const [employees, setEmployees] = useState([
@@ -85,10 +87,12 @@ function App() {
 
         <div className="my-5 employees-wrapper ">
           {employees.map((employee) => {
+            console.log(uuidv4());
             return (
               <div className="card shadow-lg mb-3">
                 <div className="row g-0">
-                  <div className="col-md-4" styleName="max-width: 540px">
+                  <Employee key={uuidv4()} />
+                  <div className="col-md-4">
                     <Employee img={employee.img} />
                   </div>
                   <div className="col-md-8">
@@ -105,7 +109,7 @@ function App() {
                           <Employee department={employee.department} />
                         </small>
                       </div>
-                      <buton className="btn btn-success px-5">Update</buton>
+                      <EditEmployee />
                     </div>
                   </div>
                 </div>
