@@ -1,5 +1,5 @@
 function Employee() {
-  return <h1>Employee appears here</h1>;
+  return <p>Employee appears here</p>;
 }
 
 export default Employee;

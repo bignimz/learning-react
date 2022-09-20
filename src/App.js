@@ -3,10 +3,13 @@ import "./App.css";
 import Employee from "./components/employee";
 
 function App() {
+  const showEmployees = true;
+  const logo = <p className="logo">Employee Manager</p>;
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {logo}
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -16,11 +19,17 @@ function App() {
           Learn React
         </a>
       </header>
-      <>
-        <Employee name="John" role="Senior Dev" />
-        <Employee />
-        <Employee />
-      </>
+      <div className="container">
+        {showEmployees ? (
+          <>
+            <Employee name="John" role="Senior Dev" />
+            <Employee />
+            <Employee />
+          </>
+        ) : (
+          <p>No Employees Available!</p>
+        )}
+      </div>
     </div>
   );
 }
